@@ -313,9 +313,9 @@ function getGermanCars(carArray) {
  *   return num * 2
  * }
 */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = (a, b) => a + b;
+const addFive = (num) => num + 5;
+const argTimesTwo = (num) => num * 2;
 
 /**
  * ### Challenge `carMaker`
@@ -330,8 +330,16 @@ const argTimesTwo = null; // code here!
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
-  /* code here */
+function carMaker(odometerValue) {
+  const updated = {
+    odometer: odometerValue,
+    drive: function(distance) {
+      updated.odometer = updated.odometer + distance;
+      return updated.odometer;
+    }
+  };
+
+  return updated;
 }
 
 /// ////// END OF CHALLENGE /////////
